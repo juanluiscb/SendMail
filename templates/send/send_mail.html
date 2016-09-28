@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block contenido %}
+  {{ contenido }}
+  <form method="post" action="/send/enviar/">
+  {% csrf_token %}
+    <div>
+      <label for="">Destinatario: </label>
+    <div>
+      <input name="destino" id="destino" type="text" value="luiscampos@uaz.edu.mx" placeholder="luiscampos@uaz.edu.mx">
+    </div>
+    </div>
+    <div>
+      <label for="">Subject</label>
+    <div>
+      <input name="subject" id="subject" type="text" value="Mensaje de prueba" placeholder="Titulo del mensaje">
+    </div>
+    </div>
+    <div><textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Mensaje de prueba"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, assumenda atque beatae consectetur consequatur libero molestias numquam. In, maxime reiciendis. Eos impedit ipsum maxime odio officia pariatur repellat reprehenderit vitae.</textarea></div>
+    <button>Enviar</button>
+  </form>
+
+{% endblock contenido %}
